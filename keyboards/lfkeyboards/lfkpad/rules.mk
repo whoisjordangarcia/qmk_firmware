@@ -1,14 +1,11 @@
-SRC = TWIlib.c issi.c lighting.c
-
-MCU = atmega32u4
-OPT_DEFS += -DBOOTLOADER_SIZE=4096
-
-F_CPU = 16000000
-F_USB = $(F_CPU)
-ARCH = AVR8
-
-# Interrupt driven control endpoint task(+60)
-OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
-ifndef QUANTUM_DIR
-	include ../../Makefile
-endif
+# Build Options
+#   change yes to no to disable
+#
+BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
+MOUSEKEY_ENABLE = no         # Mouse keys
+EXTRAKEY_ENABLE = yes        # Audio control and System control
+CONSOLE_ENABLE = no          # Console for debug
+COMMAND_ENABLE = no          # Commands for debug and configuration
+NKRO_ENABLE = no            # Enable N-Key Rollover
+AUDIO_ENABLE = no            # Audio output
+WATCHDOG_ENABLE = no         # Resets keyboard if matrix_scan() isn't run every 250ms
